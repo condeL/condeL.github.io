@@ -1,26 +1,43 @@
-import banner from './banner.jpg';
-import avatar from './avatar.jpg';
+import banner from './media/banner.jpg';
+import avatar from './media/avatar.jpg';
+import wemath from './media/wemath.png';
+import fredbot from './media/fredbot.png';
+
 
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './App.css';
-import {CloudDownload, LinkedIn} from "@material-ui/icons";
+import {
+    BusinessCenter,
+    CloudDownload, Code,
+    Create,
+    EmojiEvents,
+    Home,
+    LinkedIn,
+    Mail,
+    School,
+    Send,
+    Work
+} from "@material-ui/icons";
 import {GitHub} from "@material-ui/icons";
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { makeStyles } from '@material-ui/core/styles';
 import Image from 'material-ui-image'
+import MenuIcon from '@material-ui/icons/Menu';
+
 
 import {
+    AppBar,
     Avatar,
     Box,
     Button,
-    Card,
+    Card, CardActionArea,
     CardActions,
-    CardContent, Collapse,
-    Container, Divider,
-    Grid, IconButton,
-    Link, List, ListItem, ListItemText,
-    Paper,
+    CardContent, CardMedia, Collapse,
+    Container, Dialog, Divider, FilledInput, FormControl, FormHelperText,
+    Grid, IconButton, Input, InputLabel, LinearProgress,
+    Link, List, ListItem, ListItemText, OutlinedInput,
+    Paper, TextField, Toolbar,
     Typography, useTheme
 } from "@material-ui/core";
 import {
@@ -31,6 +48,7 @@ import {
     TimelineOppositeContent,
     TimelineSeparator
 } from "@material-ui/lab";
+import {blue, yellow} from "@material-ui/core/colors";
 
 const useStyles = makeStyles(theme => ({
     dark: { backgroundColor: theme.palette.primary.dark }
@@ -59,12 +77,12 @@ function App() {
     return (
 
         <Container maxWidth="md">
+            <Header/>
             <About/>
             <Skills/>
-            <Education/>
-            <Experience />
-            <Awards/>
+            <Experience/>
             <Projects/>
+            <Achievements/>
             <Contact/>
             <Copyright/>
         </Container>
@@ -72,12 +90,30 @@ function App() {
 }
 
 
+function Header(){
+    return(
+        <AppBar position = "sticky" >
+            <Toolbar variant="dense" style={{ justifyContent: "center"}}>
+                {/*<IconButton edge="start" color="inherit" aria-label="menu">
+                    <MenuIcon />
+                </IconButton>*/}
+                <Button variant="text" href="#Home" startIcon={<Home/>} style={{color: "white"}}>Home</Button>
+                <Button variant="text" href="#Skills" style={{color: "white"}}>Skills</Button>
+                <Button variant="text" href="#Experience" style={{color: "white"}}>Experience</Button>
+                <Button variant="text" href="#Projects" style={{color: "white"}}>Projects</Button>
+                <Button variant="text" href="#Awards" style={{color: "white"}}>Achievements</Button>
+                <Button variant="text" href="#Contact" style={{color: "white"}}>Contact</Button>
+            </Toolbar>
+            <LinearProgress variant="determinate" color="secondary" value={50} />
+
+        </AppBar>
+    )
+}
 
 function About (){
-    const theme = useTheme();
 
     return (
-        <Paper elevation={2}>
+        <Paper elevation={2} id="Home">
             <Box p={2}  m={2} textAlign="center">
                 <Box style={{ justifyContent: "center", display: "flex" }}>
                     <Avatar src={avatar} style={{ width: 200, height:200}}/>
@@ -115,175 +151,83 @@ function About (){
 
 }
 
-function Education() {
-    const [expanded, setExpanded] = React.useState(false);
-
-    const handleExpandClick = () => {
-        setExpanded(!expanded);
-    };
-    return (
-        <Box textAlign="center" m={3}>
-            <Typography variant="h2" style={{fontWeight: 400}}>Education</Typography>
-            <Grid container spacing={1} alignItems="stretch" style={{marginTop: 8}}>
-                <Grid item component={Card} xs={12} md style={{margin: 8}}>
-                    <CardContent>
-                        <Typography variant="h3">Lancaster University Ghana </Typography>
-                        <Typography variant="subtitle1">(Accra, Ghana)</Typography>
-                        <Typography variant="subtitle2" color="textSecondary">September 2021</Typography>
-                        <Typography variant="h4" color="primary">Honours Bachelor of Science <br/> Computer
-                            Science</Typography>
-                    </CardContent>
-                    <CardActions style={{justifyContent: 'center'}}>
-                        <Button variant="contained" color="secondary" onClick={handleExpandClick}
-                        >See More</Button>
-                    </CardActions>
-                    <Collapse in={expanded} timeout="auto" unmountOnExit>
-                        <CardContent>
-                            <Typography variant="body1">GPA:20.4/24</Typography>
-                            <Divider/>
-                        </CardContent>
-                    </Collapse>
-                </Grid>
-
-                <Grid item component={Card} xs={12} md style={{margin: 8}}>
-                    <CardContent>
-                        <Typography variant="h3">International Center for Language Studies</Typography>
-                        <Typography variant="subtitle1">(Washington, USA)</Typography>
-                        <Typography variant="subtitle2" color="textSecondary">December 2018</Typography>
-                        <Typography variant="h4" color="primary">Intensive English Language Program
-                            Certification – ACTFL</Typography>
-                    </CardContent>
-                    <CardActions style={{justifyContent: 'center'}}>
-                        <Button variant="contained" color="secondary" onClick={handleExpandClick}
-                        >See More</Button>
-
-                    </CardActions>
-                    <Collapse in={expanded} timeout="auto" unmountOnExit>
-                        <CardContent>
-                            <Typography variant="body1">
-                                <List>
-                                    <ListItemText primary="Reading: Advanced"/>
-                                    <Divider  component="li"/>
-                                    <ListItemText primary="Listening: Advanced"/>
-                                    <Divider  component="li"/>
-                                    <ListItemText primary="Speaking: Intermediate"/>
-                                    <Divider  component="li"/>
-                                </List>
-                            </Typography>
-                        </CardContent>
-                    </Collapse>
-
-
-                </Grid>
-                <Grid item component={Card} xs={12} md style={{margin: 8}}>
-                    <CardContent>
-                        <Typography variant="h3">IAE Lyon 3</Typography>
-                        <Typography variant="subtitle1">(Lyon, France)</Typography>
-                        <Typography variant="subtitle2" color="textSecondary">September 2016</Typography>
-                        <Typography variant="h4" color="primary">Bachelor in Management and Social
-                            Sciences</Typography>
-                    </CardContent>
-                    <CardActions style={{justifyContent: 'center'}}>
-                        <Button variant="contained" color="secondary" onClick={handleExpandClick}>
-                            See More</Button>
-                    </CardActions>
-                    <Collapse in={expanded} timeout="auto" unmountOnExit>
-                        <CardContent>
-                            <Typography variant="body1">GPA: 9.85/20</Typography>
-                            <Divider/>
-                        </CardContent>
-                    </Collapse>
-                </Grid>
-            </Grid>
-        </Box>
-
-
-    )
-
-}
-
-function Experience(){
-    const [expanded, setExpanded] = React.useState(false);
-
-    const handleExpandClick = () => {
-        setExpanded(!expanded);
-    };
+function Skills(){
+    const theme = useTheme();
 
     return (
-        <Box textAlign="center" m={3}>
-            <Typography variant="h2" style={{ fontWeight: 400 }}>Experience</Typography>
+        <Box textAlign="center" id="Skills" m={3}>
+            <Typography variant="h2"  style={{ fontWeight: 400 }}>{<Create/>} Skills</Typography>
             <Grid container spacing={1} alignItems="stretch" style={{ marginTop: 8 }}>
-                <Grid item component={Card} xs={12} md style={{ margin: 8 }}>
-
-                    <CreateCard content={{h3:"Internship in Web Development",
-                        sub1:"January-July 2018",
-                        h4:"DevHoster",
-                        sub2:"Small digital marketing agency from Guinea",
-                        list:{
-                            l1:"Website development using the WordPress and PrestaShop software",
-                            l2:"Establishing requirements",
-                            l3:"Configuring email addresses via the WMH cPanel and Microsoft Outlook",
-                            l4:"Administration of clients´ websites",
-                            l5:"Maintenance of computer equipment and the NAS server",
-                        }
-                    }}/>
-                    {/*<CardContent>
-                        <Typography variant="h3" >Internship in Web Development</Typography>
-                        <Typography variant="subtitle1" color="textSecondary">January-July 2018</Typography>
-                        <Typography variant="h4" color="primary">DevHoster</Typography>
-                        <Typography variant="subtitle2">Small digital marketing agency from Guinea</Typography>
-
-                    </CardContent>
-                    <CardActions style={{justifyContent: 'center'}}>
-                        <Button variant="contained" color="secondary" onClick={handleExpandClick}
-                        >See More</Button>
-
-                    </CardActions>
-                    <Collapse in={expanded} timeout="auto" unmountOnExit>
-                        <CardContent>
-                            <Typography variant="body1">
-                                <List>
-                                    <ListItemText primary="Website development using the WordPress and PrestaShop software"/>
-                                    <ListItemText primary="Configuring email addresses via the WMH cPanel and Microsoft Outlook"/>
-                                    <ListItemText primary="Establishing requirements"/>
-                                    <ListItemText primary="Administration of clients´ websites"/>
-                                    <ListItemText primary="Maintenance of computer equipment and the NAS server"/>
-                                </List>
-                            </Typography>
-                        </CardContent>
-                    </Collapse>*/}
-                </Grid>
-                <Grid item component={Card} xs={12} md style={{ margin: 8 }}>
+                <Grid item sm={1}/>
+                <Grid item component={Card} xs={12} sm={5} style={{ margin: 8  }}>
                     <CardContent>
-                        <Typography variant="h3" >Internship in Communication</Typography>
-                        <Typography variant="subtitle1" color="textSecondary">July-September 2015</Typography>
-                        <Typography variant="h4" color="primary">Association Génération Oxygène</Typography>
-                        <Typography variant="subtitle2">Local association in charge of organising the marathon of Lyon(France), mostly run by interns</Typography>
-
+                        <Typography variant="h3">Software Development</Typography>
+                        <Typography variant="body1">
+                            <CreateCardList list={[
+                                "Java (Enterprise and Android)",
+                                "Python",
+                                "Kotlin",
+                                "Dart",
+                                "Erlang,",
+                                "Godot",
+                            ]}/>
+                        </Typography>
                     </CardContent>
-                    <CardActions style={{justifyContent: 'center'}}>
-                        <Button variant="contained" color="secondary" onClick={handleExpandClick}
-                        >See More</Button>
+                </Grid>
+                <Grid item component={Card} xs={12} sm={5} style={{ margin: 8 , backgroundColor: theme.palette.primary.main, color: "white" }}>
 
-                    </CardActions>
-                    <Collapse in={expanded} timeout="auto" unmountOnExit>
-                        <CardContent>
-                            <Typography variant="body1">
-                                <List>
-                                    <ListItemText primary="Recruiting helpers via telemarketing"/>
-                                    <ListItemText primary="Creating and distributing information flyers"/>
-                                    <ListItemText primary="Marking screenshots using Microsoft Publisher to indicate the roads to be blocked for the race"/>
-                                    <ListItemText primary="Administrative maintenance"/>
-                                    <ListItemText primary="Recruitment and formation of the next batch of interns"/>
-                                </List>
-                            </Typography>
-                        </CardContent>
-                    </Collapse>
+                    <CardContent>
+                        <Typography variant="h3">Front end Web Development</Typography>
+                        <Typography variant="body1">
+                            <CreateCardList list={[
+                                "HTML5",
+                                "CSS3",
+                                "JS",
+                                "Wordpress",
+                                "Joomla,",
+                                "Prestashop",
+                            ]}/>
+                        </Typography>
+                    </CardContent>
+                </Grid>
+                <Grid item sm={1}/>
+                <Grid item component={Card} xs={12} sm={5} style={{ margin: 8 ,backgroundColor: theme.palette.primary.main, color: "white" }}>
+
+                    <CardContent>
+                        <Typography variant="h3">UI Design</Typography>
+                        <Typography variant="body1">
+                            <CreateCardList list={[
+                                "Flutter",
+                                "Mobile-First, Responsive Design",
+                                "Material Design paradigms",
+                                "Adobe DX prototyping",
+                                "Erlang,",
+                                "JavaFX & Swing GUIs",
+                            ]}/>
+                        </Typography>
+                    </CardContent>
+                </Grid>
+                <Grid item component={Card} xs={12} sm={5} style={{ margin: 8 }}>
+
+                    <CardContent>
+                        <Typography variant="h3">Workflow</Typography>
+                        <Typography variant="body1">
+                            <CreateCardList list={[
+                                "Google cloud platform & Firebase",
+                                "Git",
+                                "Agile Development & Scrum",
+                                "Intermediate knowledge in Project & HR management",
+                                "Basic knowledge in Economics, Finance, Statistics, Accounting, Law and Marketing,",
+                            ]}/>
+
+                        </Typography>
+                    </CardContent>
                 </Grid>
             </Grid>
         </Box>
 
     )
+
 }
 
 function CreateCard(props){
@@ -293,8 +237,9 @@ function CreateCard(props){
         setExpanded(!expanded);
     };
 
+    const list = props.content.list;
     return(
-        <Box>
+        <Card>
             <CardContent>
                 <Typography variant="h3" >{props.content.h3}</Typography>
                 <Typography variant="subtitle1" color="textSecondary">{props.content.sub1}</Typography>
@@ -303,256 +248,198 @@ function CreateCard(props){
 
             </CardContent>
             <CardActions style={{justifyContent: 'center'}}>
-                <Button variant="contained" color="secondary" onClick={handleExpandClick}
-                >See More</Button>
+                <Button variant="contained" color="primary" onClick={handleExpandClick}
+                >{expanded? "Show Less":"Show More"}</Button>
 
             </CardActions>
             <Collapse in={expanded} timeout="auto" unmountOnExit>
                 <CardContent>
                     <Typography variant="body1">
-                        <List>
-                            <ListItemText primary={props.content.list.l1}/>
-                            <ListItemText primary={props.content.list.l2}/>
-                            <ListItemText primary={props.content.list.l3}/>
-                            <ListItemText primary={props.content.list.l4}/>
-                            <ListItemText primary={props.content.list.l5}/>
+                        <List>{}
+                            <CreateCardList list={list}/>
                         </List>
                     </Typography>
                 </CardContent>
             </Collapse>
-        </Box>
+        </Card>
     )
 }
 
-class Skills extends React.Component{
-    render() {
-        return (
-            <Box textAlign="center" m={3}>
-                <Typography variant="h2" style={{ fontWeight: 400 }}>Skills</Typography>
-                <Grid container spacing={1} alignItems="stretch" style={{ marginTop: 8 }}>
-                    <Grid item sm={1}/>
-                    <Grid item component={Card} xs={12} sm={5} style={{ margin: 8 }}>
-                        <CardContent>
-                            <Typography variant="h3">Software Development</Typography>
-                            <Typography variant="body1">
-                                <List>
-                                    <ListItem>
-                                        <ListItemText primary="Java (Enterprise and Android)"/>
-                                    </ListItem>
-                                    <ListItem>
-                                        <ListItemText primary="Python"/>
-                                    </ListItem>
-                                    <ListItem>
-                                        <ListItemText primary="Kotlin"/>
-                                    </ListItem>
-                                    <ListItem>
-                                        <ListItemText primary="Dart"/>
-                                    </ListItem>
-                                    <ListItem>
-                                        <ListItemText primary="Erlang"/>
-                                    </ListItem>
-                                    <ListItem>
-                                        <ListItemText primary="Godot"/>
-                                    </ListItem>
-                                </List>
-                            </Typography>
-                        </CardContent>
-                    </Grid>
-                    <Grid item component={Card} xs={12} sm={5} style={{ margin: 8 }}>
-                        <CardContent>
-                            <Typography variant="h3">Front end Web Development</Typography>
-                            <Typography variant="body1">
-                                <List>
-                                    <ListItem>
-                                        <ListItemText primary="HTML5"/>
-                                    </ListItem>
-                                    <ListItem>
-                                        <ListItemText primary="CSS3"/>
-                                    </ListItem>
-                                    <ListItem>
-                                        <ListItemText primary="JS"/>
-                                    </ListItem>
-                                    <ListItem>
-                                        <ListItemText primary="Wordpress"/>
-                                    </ListItem>
-                                    <ListItem>
-                                        <ListItemText primary="Joomla"/>
-                                    </ListItem>
-                                    <ListItem>
-                                        <ListItemText primary="Prestashop"/>
-                                    </ListItem>
-                                </List>
-                            </Typography>
-                        </CardContent>
-                    </Grid>
-                    <Grid item sm={1}/>
-                    <Grid item component={Card} xs={12} sm={5} style={{ margin: 8 }}>
-                        <CardContent>
-                            <Typography variant="h3">UI Design</Typography>
-                            <Typography variant="body1">
-                                <List>
-                                    <ListItem>
-                                        <ListItemText primary="Flutter"/>
-                                    </ListItem>
-                                    <ListItem>
-                                        <ListItemText primary="Mobile-First, Responsive Design"/>
-                                    </ListItem>
-                                    <ListItem>
-                                        <ListItemText primary="Material Design paradigms"/>
-                                    </ListItem>
-                                    <ListItem>
-                                        <ListItemText primary="Adobe DX prototyping"/>
-                                    </ListItem>
-                                    <ListItem>
-                                        <ListItemText primary="JavaFX & Swing GUIs"/>
-                                    </ListItem>
-
-                                </List>
-                            </Typography>
-                        </CardContent>
-                    </Grid>
-                    <Grid item component={Card} xs={12} sm={5} style={{ margin: 8 }}>
-                        <CardContent>
-                            <Typography variant="h3">Workflow</Typography>
-                            <Typography variant="body1">
-                                <List>
-                                    <ListItem>
-                                        <ListItemText primary="Google cloud platform & Firebase"/>
-                                    </ListItem>
-                                    <ListItem>
-                                        <ListItemText primary="Git"/>
-                                    </ListItem>
-                                    <ListItem>
-                                        <ListItemText primary="Agile Development & Scrum"/>
-                                    </ListItem>
-                                    <ListItem>
-                                        <ListItemText primary="Intermediate knowledge in Project & HR management"/>
-                                    </ListItem>
-                                    <ListItem>
-                                        <ListItemText primary="Basic knowledge in Economics, Finance, Statistics, Accounting, Law and Marketing"/>
-                                    </ListItem>
-                                </List>
-                            </Typography>
-                        </CardContent>
-                    </Grid>
-                </Grid>
-            </Box>
-
-        )
+function CreateCardList(props){
+    const items=[];
+    for (let l of props.list){
+        items.push(<ListItemText primary={l}/>)
+        items.push(<Divider/>)
     }
+    return(
+        items
+    )
 }
 
-class Awards extends React.Component{
-    render() {
-        return (
-            <Paper>
-                <Box textAlign="center" p={2} m={3}>
-                    <Typography variant="h2" style={{ fontWeight: 400 }}>Awards</Typography>
-                    <Typography variant="body1">
-                        <List>
-                            <ListItem>
-                                <ListItemText primary="Led the development of a mobile Android application for teaching mathematics to Ghanaian students in the context of Lancaster University’s 2nd year group project module:"/>
-                                <Collapse in="true" timeout="auto" unmountOnExit>
-                                    <List>
-                                        <ListItemText primary="GitHub repository:"/> <Link href="https://github.com/condeL/WeMath">https://github.com/condeL/WeMath</Link>
-                                        <ListItemText primary="Responsible for the architectural & UI designs of the app, the backend, and the coordination of the team"/>
-                                        <ListItemText primary="Features include math lessons, commenting and custom quiz creation by the users"/>
-                                    </List>
-                                </Collapse>
-                            </ListItem>
-                            <ListItem>
-                                <ListItemText primary="Directed the project"/> <Link href="https://www.camguinee.org">www.camguinee.org</Link> as an on-site consultant for an NGO
-                            </ListItem>
-                            <ListItem>
-                                <ListItemText primary="Won Lancaster University Ghana’s <b>2019 & 2020 Provost’s List Award</b> rewarding academic excellency"/>
-                            </ListItem>
-                        </List>
-                    </Typography>
-                </Box>
-            </Paper>
 
 
-        )
-    }
-}
 
-class Projects extends React.Component{
+
+class Experience extends React.Component{
 
     render(){
         return(
-            <Box  textAlign="center">
+
+            <Box textAlign="center" id="Experience">
                 <Timeline align="alternate">
+
+                    <TimelineItem style={{ marginBottom: -75 }}>
+                        <TimelineOppositeContent style={{textAlign:"center"}}>
+                            <Typography variant="h2" style={{ fontWeight: 400, textAlign:"center"}}>{<BusinessCenter/>} Experience</Typography>
+
+                        </TimelineOppositeContent>
+                        <TimelineSeparator>
+
+                        </TimelineSeparator>
+                        <TimelineContent>
+                            <Typography variant="h2" style={{fontWeight: 400, textAlign:"center"}}>{<School/>} Education</Typography>
+
+                        </TimelineContent>
+                    </TimelineItem>
+
+                    <TimelineItem>
+                        <TimelineSeparator>
+                        </TimelineSeparator>
+                        <TimelineContent>
+                        </TimelineContent>
+                    </TimelineItem>
+
                     <TimelineItem>
                         <TimelineOppositeContent>
                             <Typography variant="body2" color="textSecondary">
-                                9:30 am
+                                2021
                             </Typography>
                         </TimelineOppositeContent>
                         <TimelineSeparator>
-                            <TimelineDot>
-                                <LinkedIn />
-                            </TimelineDot>
+                            <TimelineDot color="primary"/>
                             <TimelineConnector />
                         </TimelineSeparator>
                         <TimelineContent>
-                            <Paper elevation={3}>
-                                <Typography variant="h6" component="h1">
-                                    Eat
-                                </Typography>
-                                <Typography>Because you need strength</Typography>
-                            </Paper>
+                            <CreateCard content={{
+                                h3:"Lancaster University Ghana",
+                                sub1:"(Accra, Ghana)",
+                                h4:"Honours Bachelor of Science in Computer Science",
+                                sub2:"September 2021",
+                                list:[
+                                    "GPA:20.4/24",
+                                ]
+                            }}/>
                         </TimelineContent>
                     </TimelineItem>
+
                     <TimelineItem>
                         <TimelineOppositeContent>
                             <Typography variant="body2" color="textSecondary">
-                                10:00 am
+                                2018
                             </Typography>
                         </TimelineOppositeContent>
-                        <TimelineSeparator>
-                            <TimelineDot color="primary">
-                                <GitHub />
-                            </TimelineDot>
-                            <TimelineConnector />
-                        </TimelineSeparator>
-                        <TimelineContent>
-                            <Paper elevation={3} >
-                                <Typography variant="h6" component="h1">
-                                    Code
-                                </Typography>
-                                <Typography>Because it&apos;s awesome!</Typography>
-                            </Paper>
-                        </TimelineContent>
-                    </TimelineItem>
-                    <TimelineItem>
-                        <TimelineSeparator>
-                            <TimelineDot color="primary" variant="outlined">
-                                <LinkedIn />
-                            </TimelineDot>
-                            <TimelineConnector />
-                        </TimelineSeparator>
-                        <TimelineContent>
-                            <Paper elevation={3} >
-                                <Typography variant="h6" component="h1">
-                                    Sleep
-                                </Typography>
-                                <Typography>Because you need rest</Typography>
-                            </Paper>
-                        </TimelineContent>
-                    </TimelineItem>
-                    <TimelineItem>
                         <TimelineSeparator>
                             <TimelineDot color="secondary">
-                                <GitHub />
                             </TimelineDot>
+                            <TimelineConnector />
+                        </TimelineSeparator>
+                        <TimelineContent style={{textAlign:"center"}}>
+                            <CreateCard content={{
+                                h3:"Internship in Web Development",
+                                sub1:"January-July 2018",
+                                h4:"DevHoster",
+                                sub2:"Small digital marketing agency from Guinea",
+                                list:[
+                                    "Website development using the WordPress and PrestaShop software",
+                                    "Establishing requirements",
+                                    "Configuring email addresses via the WMH cPanel and Microsoft Outlook",
+                                    "Administration of clients´ websites",
+                                    "Maintenance of computer equipment and the NAS server",
+                                ]
+                            }}/>
+                        </TimelineContent>
+                    </TimelineItem>
+
+                    <TimelineItem>
+                        <TimelineOppositeContent>
+                            <Typography variant="body2" color="textSecondary">
+                                2017
+                            </Typography>
+                        </TimelineOppositeContent>
+                        <TimelineSeparator>
+                            <TimelineDot color="primary"/>
+                            <TimelineConnector />
                         </TimelineSeparator>
                         <TimelineContent>
-                            <Paper elevation={3} >
-                                <Typography variant="h6" component="h1">
-                                    Repeat
-                                </Typography>
-                                <Typography>Because this is the life you love!</Typography>
-                            </Paper>
+                            <CreateCard content={{
+                                h3:"International Center for Language Studies",
+                                sub1:"(Washington, USA)",
+                                h4:"Intensive English Language Program Certification – ACTFL",
+                                sub2:"December 2018",
+                                list:[
+                                    "Reading: Advanced",
+                                    "Listening: Advanced",
+                                    "Speaking: Intermediate",
+                                ]
+                            }}/>
+                        </TimelineContent>
+                    </TimelineItem>
+
+                    <TimelineItem style={{ marginTop: -15 }}>
+                        <TimelineSeparator>
+                            <TimelineConnector />
+                        </TimelineSeparator>
+                        <TimelineContent>
+                        </TimelineContent>
+                    </TimelineItem>
+
+                    <TimelineItem>
+                        <TimelineOppositeContent>
+                            <Typography variant="body2" color="textSecondary">
+                                2016
+                            </Typography>
+                        </TimelineOppositeContent>
+                        <TimelineSeparator>
+                            <TimelineDot color="primary" variant="outlined"/>
+                            <TimelineConnector />
+                        </TimelineSeparator>
+                        <TimelineContent>
+                            <CreateCard content={{
+                                h3:"IAE Lyon 3",
+                                sub1:"(Lyon, France)",
+                                h4:"Bachelor in Management and Social Sciences",
+                                sub2:"September 2016",
+                                list:[
+                                    "GPA: 9.85/20"
+                                ]
+                            }}/>
+                        </TimelineContent>
+                    </TimelineItem>
+
+                    <TimelineItem>
+                        <TimelineOppositeContent>
+                            <Typography variant="body2" color="textSecondary">
+                                2015
+                            </Typography>
+                        </TimelineOppositeContent>
+                        <TimelineSeparator>
+                            <TimelineDot color="secondary"/>
+                            <TimelineConnector />
+                        </TimelineSeparator>
+                        <TimelineContent style={{textAlign:"center"}}>
+                            <CreateCard content={{
+                                h3:"Internship in Communication",
+                                sub1:"July-September 2015",
+                                h4:"Association Génération Oxygène",
+                                sub2:"Local association in charge of organising the marathon of Lyon(France), mostly run by interns",
+                                list:[
+                                    "Recruiting helpers via telemarketing",
+                                    "Creating and distributing information flyers",
+                                    "Marking screenshots using Microsoft Publisher to indicate the roads to be blocked for the race",
+                                    "Administrative maintenance",
+                                    "Recruitment and formation of the next batch of intern",
+                                ]
+                            }}/>
                         </TimelineContent>
                     </TimelineItem>
                 </Timeline>
@@ -561,20 +448,159 @@ class Projects extends React.Component{
     }
 }
 
+
+function Projects(){
+
+    const [expanded, setExpanded] = React.useState(false);
+
+    const handleExpandClick = () => {
+        setExpanded(!expanded);
+    };
+
+    return(
+        <Box textAlign="center" m={3} id="Projects">
+            <Typography variant="h2" style={{fontWeight: 400}}>{<Code/>} Projects</Typography>
+            <Grid container spacing={1} alignItems="stretch" style={{ marginTop: 8 }}>
+                <Grid item component={Card} xs style={{ margin: 8 }}>
+                    <CardMedia
+                        image={wemath}
+                        title="Wemath"
+                        style={{height:200, paddingTop: '56.25%', marginBottom:8}}
+
+                    />
+                    <CardContent>
+                        <Typography gutterBottom variant="h5">
+                            WeMath
+                        </Typography>
+                        <Typography variant="body2" color="textSecondary">
+                            Led the development of a mobile Android application for teaching mathematics to Ghanaian students in the context of Lancaster University’s 2nd year group project module:
+                        </Typography>
+                    </CardContent>
+                    <CardActions style={{justifyContent: 'center'}}>
+                        <Button variant="contained" color="primary" onClick={handleExpandClick}>
+                            Learn More
+                        </Button>
+                        <Button variant="outlined" color="primary" href="https://github.com/condeL/WeMath" startIcon={<GitHub/>}>
+                            See Code
+                        </Button>
+                    </CardActions>
+                    <CardContent>
+                        <Collapse in={expanded} timeout="auto" unmountOnExit>
+                            <Typography variant="body2">Responsible for the architectural & UI designs of the app, the backend, and the coordination of the team</Typography>
+                            <Divider/>
+                            <Typography variant="body2">Features include math lessons, commenting and custom quiz creation by the users</Typography>
+                            <Divider/>
+                        </Collapse>
+                    </CardContent>
+                </Grid>
+
+                <Grid item component={Card} xs style={{ margin: 8 }}>
+                    <CardMedia
+                        image={fredbot}
+                        title="Fredbot"
+                        style={{height:200, paddingTop: '56.25%', marginBottom:8}}
+                    />
+                    <CardContent>
+                        <Typography gutterBottom variant="h5">
+                            Fredbot
+                        </Typography>
+                        <Typography variant="body2" color="textSecondary">
+                            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
+                            across all continents except Antarctica
+                        </Typography>
+                    </CardContent>
+                    <CardActions style={{justifyContent: 'center'}}>
+                        <Button variant="contained" color="secondary" startIcon={<GitHub/>} disabled>
+                            Coming Soon!
+                        </Button>
+                    </CardActions>
+                </Grid>
+            </Grid>
+        </Box>
+    )
+}
+
+
+
+function Achievements(){
+    const theme = useTheme();
+
+    return (
+        <Box id="Achievements" textAlign="center" m={3}>
+            <Typography variant="h2" style={{ fontWeight: 400 }}>{<EmojiEvents/>} Achievements</Typography>
+            {/*<Box >
+                    <Typography variant="h2" style={{ fontWeight: 400 }}>Achievements</Typography>
+                    <Typography>Directed the project <Link color="secondary" href="https://www.camguinee.org">www.camguinee.org</Link> as an on-site consultant for an NGO</Typography>
+                    <Divider/>
+                    <Typography>Won Lancaster University Ghana’s <b>2019 , 2020 & 2021 Provost’s List Award</b> rewarding academic excellency</Typography>
+                    <Divider/>
+                </Box>*/}
+            <Grid container spacing={1} >
+                <Grid item component={Card} xs={12} sm style={{margin:8}}>
+                    <CardContent>
+                        <Typography variant="body1"   style={{ fontWeight: 400 , fontSize:48}}>3</Typography>
+                        <Typography variant="body2"   style={{ fontSize:18}}> Awards Rewarding Academic Excellency</Typography>
+                    </CardContent>
+                </Grid>
+
+                <Grid item component={Card} xs={12} sm style={{ backgroundColor: theme.palette.primary.main, margin:8,color:"white"}}>
+                    <CardContent>
+                        <Typography variant="body1"   style={{ fontWeight: 400 , fontSize:48}}>7</Typography>
+                        <Typography variant="body2"   style={{ fontSize:18}}> Websites Created During Internships</Typography>
+                    </CardContent>
+                </Grid>
+
+                <Grid item component={Card} xs={12} sm style={{ margin:8}}>
+                    <CardContent>
+                        <Typography variant="body1"    style={{ fontWeight: 400 , fontSize:48}}>1</Typography>
+                        <Typography variant="body2"    style={{ fontSize:18}}>International Conference Award</Typography>
+                    </CardContent>
+                </Grid>
+
+                <Grid item component={Card} xs={12} sm style={{ backgroundColor: theme.palette.primary.main, margin:8,color:"white"}}>
+                    <CardContent>
+                        <Typography variant="body1"   style={{ fontWeight: 400 , fontSize:48}}>1</Typography>
+                        <Typography variant="body2"    style={{ fontSize:18}}>Scientific Publication</Typography>
+                    </CardContent>
+                </Grid>
+            </Grid>
+        </Box>
+    )
+}
+
 class Contact extends React.Component{
     render(){
         return(
-            <Paper>
-                <Box  textAlign="center" m={3} p={3}>
-                    <Typography variant="h2" style={{ fontWeight: 400 }}>Contact me</Typography>
-                </Box>
-            </Paper>
+            <Box id="Contact"  m={3} >
+                <Typography variant="h2" align={"center"} style={{ fontWeight: 400 }}>{<Mail/>} Contact me</Typography>
+                <Paper style={{margin:16}}>
+                    <Box  p={1} style={{marginLeft:16}}>
+
+                        <TextField id="name" label="Name" variant="filled" margin="dense" size="small" required={true}  style={{marginRight:40}} />
+
+                        <TextField id="email" label="Email" variant="filled" margin="dense" size="small" required={true} />
+                    </Box>
+                    <Box  p={1} style={{marginLeft:16}}>
+
+                        <TextField id="subject" label="Subject" variant="filled" margin="dense" size="small" required={true} />
+                    </Box>
+                    <Box  p={1} style={{marginLeft:16, marginRight:16}}>
+                        <TextField id="message" label="Message" variant="filled" margin="dense" size="small" required={true} fullWidth={true} multiline={true} minRows={5} />
+                    </Box>
+                    <Box  p={1} style={{marginLeft:16, paddingBottom:16}}>
+                    <Button type="submit" variant="contained" color="primary" endIcon={<Send/>}>Send</Button>
+                    </Box>
+
+
+                </Paper>
+            </Box>
         )
     }
 }
 
 function Copyright() {
     return (
+        <Box m={1}>
         <Typography variant="body2" color="textSecondary" align="center">
             {'Copyright © '}
             <Link color="inherit" href="https://lancineconde.me/">
@@ -582,6 +608,7 @@ function Copyright() {
             </Link>{' '}
             {new Date().getFullYear()}
         </Typography>
+        </Box>
     );
 }
 
