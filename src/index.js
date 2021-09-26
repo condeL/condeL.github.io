@@ -5,7 +5,7 @@ import App from './App';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { createTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/core/styles';
-
+import './i18n';
 import reportWebVitals from './reportWebVitals';
 
 
@@ -36,6 +36,9 @@ const theme = createTheme({
         },
         h5:{
             fontSize: "1.05rem"
+        },
+        h6:{
+            fontSize: "1.00rem"
         },
     },
 });
