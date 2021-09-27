@@ -2,12 +2,14 @@ import {Avatar, Box, Button, Link, Paper, Typography} from "@material-ui/core";
 import avatar from "./media/avatar.jpg";
 import {CloudDownload, GitHub, LinkedIn, Mail, Place, WhatsApp} from "@material-ui/icons";
 import {green, red} from "@material-ui/core/colors";
-import cv from "./files/Lanciné Condé CV.pdf";
+import cv_en from "./files/Lanciné Condé CV_en.pdf";
+import cv_fr from "./files/Lanciné Condé CV_fr.pdf";
+
 import React from "react";
 import {useTranslation} from "react-i18next";
 
 export default function About (){
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
 
     return (
         <Paper elevation={2} id="Home" m={3}>
@@ -47,7 +49,8 @@ export default function About (){
                             startIcon={<CloudDownload/>}
                             color="primary"
                             style={{color: "white"}}
-                            onClick={() => {window.open(cv, "_blank")}
+                            rel="noopener noreferrer"
+                            onClick={() => {window.open(i18n.resolvedLanguage==="fr"? cv_fr: cv_en, "_blank")}
                             }>
                         {t("about.cv")}
                     </Button>

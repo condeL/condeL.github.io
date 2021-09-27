@@ -1,5 +1,5 @@
-import {Box, Card, CardContent, Divider, Grid, Slide, Typography, useTheme} from "@material-ui/core";
-import {Rating} from "@material-ui/lab";
+import {Box, Card, CardContent, Divider, Grid, Typography, useTheme} from "@material-ui/core";
+import {Rating} from "@material-ui/lab"
 import {Build, Create, DeveloperMode, ImportantDevices, Mood} from "@material-ui/icons";
 import React from "react";
 import {useTranslation} from "react-i18next";

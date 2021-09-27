@@ -20,14 +20,18 @@ export default function Footer(){
                 </Box>
                 <Divider variant="middle" style={{backgroundColor:"white"}}/>
                 <Box p={1}>
-                        <Typography variant="body1" style={{color:"white"}}>{'Copyright © '}
-                        <Link color="inherit" href="https://lancineconde.me/">
+                    <Typography variant="body1" style={{color:"white"}}>{'Copyright © '}
+                        <Link color="inherit" rel="noopener noreferrer" href="https://lancineconde.me/">
                             Lanciné Condé
                         </Link>{' '}
                         {new Date().getFullYear()}
                     </Typography>
-                    <Typography variant="body2" style={{color:"white"}}>{t("footer.made_using")} <Link color="inherit" href="https://reactjs.org">React.js</Link> 🚀 {t("footer.and")} <Link color="inherit" href="https://mui.com">Material UI</Link> ❤️</Typography>
-
+                    <Typography variant="body2" style={{color:"white"}}>{t("footer.made_using") + ' '}
+                        <Link color="inherit" rel="noopener noreferrer" href="https://reactjs.org">React.js</Link>
+                        {' '}🚀 {t("footer.and") + ' '}
+                        <Link color="inherit" rel="noopener noreferrer" href="https://mui.com">Material UI</Link>
+                        {' '}❤️
+                    </Typography>
                 </Box>
             </Paper>
         </Box>

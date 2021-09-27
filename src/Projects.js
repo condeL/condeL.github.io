@@ -51,7 +51,7 @@ export default function Projects(){
                         <Button variant="contained" color="primary" onClick={handleExpandClick}>
                             {t("projects.learn_more")}
                         </Button>
-                        <Button variant="outlined" color="primary" href="https://github.com/condeL/WeMath" startIcon={<GitHub/>}>
+                        <Button variant="outlined" color="primary" rel="noopener noreferrer" href="https://github.com/condeL/WeMath" startIcon={<GitHub/>}>
                             {t("projects.see_code")}
                         </Button>
                     </CardActions>

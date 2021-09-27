@@ -216,7 +216,7 @@ i18n
                     },
                     about:{
                         location:"Conakry, Guinée",
-                        profile:"Diplômé bilingue (français et anglais) en informatique scientifique de l'université de Lancaster, au Ghana.",
+                        profile:"Diplômé bilingue (français et anglais) en informatique scientifique de l'université de Lancaster au Ghana.",
                         date:"Date de naissance: 09/1993",
                         nationality:"Nationalité: Guinéen",
                         gender:"Genre: Homme",
@@ -255,7 +255,7 @@ i18n
                             agile:"Agile & Scrum",
                         },
                         personal: {
-                            title: " Compétences Personnelles",
+                            title: " Aptitudes Personnelles",
                             dedication: "Dévouement",
                             critical_thinking: "Réflexion critique",
                             autonomy: "Autonomie",
