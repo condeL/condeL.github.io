@@ -13,6 +13,7 @@ i18n
     .init({
         debug: true,
         fallbackLng: 'en',
+
         interpolation: {
             escapeValue: false, // not needed for react as it escapes by default
         },
@@ -57,7 +58,7 @@ i18n
                             react:"React",
                             responsive_design: "Responsive Design",
                             flutter:"Flutter",
-                            adobeDX: "Adobe DX Prototyping",
+                            adobeDX: "Adobe XD Prototyping",
                             gui:"JavaFX & Swing GUIs"
                         },
                         technical:{
@@ -242,7 +243,7 @@ i18n
                             react:"React",
                             responsive_design: "Design réactif",
                             flutter:"Flutter",
-                            adobeDX: "Prototypage Adobe DX",
+                            adobeDX: "Prototypage Adobe XD",
                             gui:"Interfaces JavaFX & Swing"
                         },
                         technical:{

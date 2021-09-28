@@ -76,7 +76,7 @@ function HeaderMenuDesktop(){
     return(
         <Toolbar variant="dense" style={{ justifyContent: "center"}}>
             <MenuButtons/>
-            {/*<TranslateButton/>*/}
+            <TranslateButton/>
         </Toolbar>
     )
 }
@@ -107,7 +107,7 @@ function HeaderMenuMobile() {
             >
                 <MenuButtons/>
             </Drawer>
-            {/*<TranslateButton/>*/}
+            <TranslateButton/>
         </Toolbar>
     )
 }
@@ -152,9 +152,9 @@ function TranslateButton(){
                 open={Boolean(anchorEl)}
                 onClose={handleClose}
             >
-                {/*
-                <MenuItem onClick={i18n.changeLanguage("en").then(handleClose)}>{t("header.english")}</MenuItem>
-                <MenuItem onClick={i18n.changeLanguage("fr").then(handleClose)}>{t("header.french")}</MenuItem>*/}
+
+                <MenuItem onClick={() => i18n.changeLanguage("en").then(handleClose)}>{t("header.english")}</MenuItem>
+                <MenuItem onClick={() => i18n.changeLanguage("fr").then(handleClose)}>{t("header.french")}</MenuItem>
             </Menu>
         </>
     )
