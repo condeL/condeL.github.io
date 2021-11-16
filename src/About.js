@@ -34,8 +34,7 @@ export default function About (){
                     </Box>
                 </Box>
                 <Typography variant="body1" paragraph="true">
-                    <p>{t("about.profile")}<br/>
-                        {t("about.date")}<br />
+                    <p>{t("about.profile")}<br/><br/>
                         {t("about.nationality")}<br />
                         {t("about.gender")}<br />
                         {t("about.interests")}</p>

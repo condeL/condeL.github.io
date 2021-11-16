@@ -11,7 +11,7 @@ i18n
     // init i18next
     // for all options read: https://www.i18next.com/overview/configuration-options
     .init({
-        debug: true,
+        debug: false,
         fallbackLng: 'en',
 
         interpolation: {
@@ -36,28 +36,28 @@ i18n
                         date:"Date of birth: 09/1993",
                         nationality:"Nationality: Guinean",
                         gender:"Gender: Male",
-                        interests:"Interests: Programming, Reading, Anime",
+                        interests:"Interests: Programming, Reading, Football, Anime",
                         cv:"Download CV"
                     },
                     skills:{
                         title:" Skills",
                         programming_languages: {
-                            title: " Programming Languages",
+                            title: " Programming",
                             java:"Java",
                             javascript:"Javascript",
                             python:"Python",
                             android:"Android",
                             kotlin:"Kotlin",
-                            dart:"Dart",
+                            node:"Node JS",
                             c:"C"
                         },
                         design: {
                             title: " UI design",
                             material_design:"Material Design",
                             wordpress:"Wordpress",
-                            react:"React",
+                            react:"React JS",
                             responsive_design: "Responsive Design",
-                            flutter:"Flutter",
+                            bootstrap:"Bootstrap",
                             adobeDX: "Adobe XD Prototyping",
                             gui:"JavaFX & Swing GUIs"
                         },
@@ -86,11 +86,24 @@ i18n
                         title_journey:" My Journey",
                         show_more:"Show More",
                         show_less:"Show Less",
-                        lancaster:{
+                        london:{
+                            h3:"Master of Science in Computer Science",
+                            sub1:"(Online)",
+                            h4:"University of East London",
+                            sub2:"UNICAF Scholarship",
+                            date:"2022 (Ongoing)",
+                            list: {
+                                l0:"Advanced Software Engineering",
+                                l1:"Big Data Analytics",
+                                l2:"Artificial Intelligence and Machine Vision",
+                                l3:"Cloud Computing",
+                            }
+                        },lancaster:{
                             h3:"Honours Bachelor of Science in Computer Science",
                             sub1:"(Accra, Ghana)",
                             h4:"Lancaster University Ghana",
                             sub2:"Ghanaian campus of a renowned British university",
+                            date:"2021",
                             list: {
                                 l0:"First Class Degree. GPA: 20.4/24",
                                 l1:"Advanced Programming Concepts",
@@ -103,10 +116,11 @@ i18n
                             }
                         },
                         devhoster:{
-                            h3:"Internship in Web Development",
+                            h3:"Web Developer",
                             sub1:"(Conakry, Guinea)",
                             h4:"DevHoster",
                             sub2:"Small digital marketing agency from Guinea",
+                            date:"2018 Jan-Jul",
                             list: {
                                 l0:"Website development using WordPress and PrestaShop",
                                 l1:"Establishing requirements",
@@ -120,6 +134,7 @@ i18n
                             sub1: "(Washington DC, USA)",
                             h4: "International Center for Language Studies",
                             sub2: "International language school in Washington DC",
+                            date:"2017",
                             list: {
                                 l0:"Reading: Advanced",
                                 l1:"Listening: Advanced",
@@ -131,6 +146,7 @@ i18n
                             sub1:"(Lyon, France)",
                             h4:"IAE Lyon 3",
                             sub2:"French public university in Lyon",
+                            date:"2016",
                             list: {
                                 l0:"*Completed up to 2nd year. GPA: 9.85/20",
                                 l1:"Project Management",
@@ -146,6 +162,7 @@ i18n
                             sub1:"(Lyon, France)",
                             h4:"Association Génération Oxygène",
                             sub2:"Local association, mostly ran by interns, in charge of organising the marathon of Lyon",
+                            date:"2015 Jul-Sep",
                             list: {
                                 l0:"Recruiting helpers via telemarketing",
                                 l1:"Creating and distributing information flyers",
@@ -221,7 +238,7 @@ i18n
                         date:"Date de naissance: 09/1993",
                         nationality:"Nationalité: Guinéen",
                         gender:"Genre: Homme",
-                        interests:"Intérêts : Programmation, Lecture, Anime",
+                        interests:"Intérêts : Programmation, Lecture, Football, Anime",
                         cv:"Télécharger CV"
                     },
                     skills:{
@@ -233,16 +250,16 @@ i18n
                             python:"Python",
                             android:"Android",
                             kotlin:"Kotlin",
-                            dart:"Dart",
+                            node:"Node JS",
                             c:"C",
                         },
                         design: {
                             title: " Design",
                             material_design:"Material Design",
                             wordpress:"Wordpress",
-                            react:"React",
+                            react:"React JS",
                             responsive_design: "Design réactif",
-                            flutter:"Flutter",
+                            bootstrap:"Bootstrap",
                             adobeDX: "Prototypage Adobe XD",
                             gui:"Interfaces JavaFX & Swing"
                         },
@@ -250,7 +267,7 @@ i18n
                             title:" Compétences Techniques",
                             gcp:"GCP & Firebase",
                             git:"Git",
-                            databases:"Base de Données (SQL, NoSQL)",
+                            databases:"Bases de données",
                             engineering:"Conception de logiciels",
                             management:"Management de Projets",
                             agile:"Agile & Scrum",
@@ -271,11 +288,24 @@ i18n
                         title_journey:" Mon parcours",
                         show_more:"Voir Plus",
                         show_less:"Voir Moins",
-                        lancaster:{
+                        london:{
+                            h3:"Master of Science in Computer Science",
+                            sub1:"(Online)",
+                            h4:"University of East London",
+                            sub2:"UNICAF Scholarship",
+                            date:"2022 (En cours)",
+                            list: {
+                                l0:"Advanced Software Engineering",
+                                l1:"Big Data Analytics",
+                                l2:"Artificial Intelligence and Machine Vision",
+                                l3:"Cloud Computing",
+                            }
+                        },lancaster:{
                             h3:"License en informatique scientifique",
                             sub1:"(Accra, Ghana)",
                             h4:"Lancaster University Ghana",
                             sub2:"Campus ghanéen d'une université britannique renommée",
+                            date:"2021",
                             list: {
                                 l0:"Mention Très Bien. Moyenne: 20.4/24",
                                 l1:"Programmation avancée",
@@ -288,10 +318,11 @@ i18n
                             }
                         },
                         devhoster:{
-                            h3:"Stage en développement web",
+                            h3:"Développeur web",
                             sub1:"(Conakry, Guinée)",
                             h4:"DevHoster",
                             sub2:"Petite agence de marketing numérique de Guinée",
+                            date:"2015 Jan-Juil",
                             list: {
                                 l0:"Développement de sites web avec WordPress et PrestaShop",
                                 l1:"Établissement du cahier des charges",
@@ -305,6 +336,7 @@ i18n
                             sub1: "(Washington DC, USA)",
                             h4: "International Center for Language Studies",
                             sub2: "École de langue internationale à Washington DC",
+                            date:"2017",
                             list: {
                                 l0:"Lecture: Avancé",
                                 l1:"Écoute: Avancé",
@@ -316,6 +348,7 @@ i18n
                             sub1:"(Lyon, France)",
                             h4:"IAE Lyon 3",
                             sub2:"Université publique française de Lyon",
+                            date:"2016",
                             list: {
                                 l0:"*Complété jusqu'à la 2ème année. Moyenne: 9.85/20",
                                 l1:"Gestion de projet",
@@ -331,6 +364,7 @@ i18n
                             sub1:"(Lyon, France)",
                             h4:"Association Génération Oxygène",
                             sub2:"Association locale, principalement animée par des stagiaires, chargée d'organiser le marathon de Lyon",
+                            date:"2015 Juil-Sep",
                             list: {
                                 l0:"Recrutement de bénévoles par télémarketing",
                                 l1:"Création et distribution de flyers",

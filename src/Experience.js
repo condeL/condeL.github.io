@@ -21,10 +21,15 @@ import {
     TimelineSeparator
 } from "@material-ui/lab";
 import {useTranslation} from "react-i18next";
+import {useInView} from "react-intersection-observer";
+import {motion} from "framer-motion";
 
 function CreateCard(props){
     const [expanded, setExpanded] = React.useState(false);
     const { t } = useTranslation();
+    const [ref, inView] = useInView({
+        triggerOnce: true,
+    });
 
     const handleExpandClick = () => {
         setExpanded(!expanded);
@@ -33,7 +38,7 @@ function CreateCard(props){
     const list = props.content.list;
 
     return(
-        <Card style={{minWidth:1}}>
+        <Card style={{minWidth:1, opacity: inView ? 1 : 0 }} component={motion.div} animate={ inView? { x:0} : ""} initial={props.left? {x:"-50%"} : {x:"50%"}} ref={ref}>
             <CardContent>
                 <Typography variant="h4" >{props.content.h3}</Typography>
                 <Typography variant="subtitle1" color="textSecondary">{props.content.sub1}</Typography>
@@ -93,10 +98,47 @@ export default function Experience (){
             }
 
             <Timeline align={matches? "alternate" : "left"}>
+
                 <TimelineItem>
                     <TimelineOppositeContent style={ !matches? {maxWidth:"25%"} : {maxWidth:"100%"} }>
                         <Typography variant="body2" color="textSecondary">
-                            2021
+                            {t("experience.london.date")}
+                        </Typography>
+                    </TimelineOppositeContent>
+                    <TimelineSeparator>
+                        <TimelineDot color="primary"/>
+                        <TimelineConnector />
+                    </TimelineSeparator>
+                    <TimelineContent>
+                        <CreateCard content={{
+                            h3:t("experience.london.h3"),
+                            sub1:t("experience.london.sub1"),
+                            h4:t("experience.london.h4"),
+                            sub2:t("experience.london.sub2"),
+                            list:[
+                                t("experience.london.list.l0"),
+                                t("experience.london.list.l1"),
+                                t("experience.london.list.l2"),
+                                t("experience.london.list.l3"),
+                            ]
+                        }} left={false}
+                        />
+                    </TimelineContent>
+                </TimelineItem>
+
+                { matches===true &&
+                <TimelineItem style={{ marginTop: -15}}>
+                    <TimelineSeparator>
+                        <TimelineConnector />
+                    </TimelineSeparator>
+                    <TimelineContent>
+                    </TimelineContent>
+                </TimelineItem>}
+
+                <TimelineItem>
+                    <TimelineOppositeContent style={ !matches? {maxWidth:"25%"} : {maxWidth:"100%"} }>
+                        <Typography variant="body2" color="textSecondary">
+                            {t("experience.lancaster.date")}
                         </Typography>
                     </TimelineOppositeContent>
                     <TimelineSeparator>
@@ -119,14 +161,16 @@ export default function Experience (){
                                 t("experience.lancaster.list.l6"),
                                 t("experience.lancaster.list.l7")
                             ]
-                        }}/>
+                        }}
+                            left={false}
+                        />
                     </TimelineContent>
                 </TimelineItem>
 
                 <TimelineItem>
                     <TimelineOppositeContent style={ !matches? {maxWidth:"25%"} : {maxWidth:"100%"} }>
                         <Typography variant="body2" color="textSecondary">
-                            2018 Jan-Jul
+                            {t("experience.devhoster.date")}
                         </Typography>
                     </TimelineOppositeContent>
                     <TimelineSeparator>
@@ -147,14 +191,14 @@ export default function Experience (){
                                 t("experience.devhoster.list.l3"),
                                 t("experience.devhoster.list.l4")
                             ]
-                        }}/>
+                        }} left={true}/>
                     </TimelineContent>
                 </TimelineItem>
 
                 <TimelineItem>
                     <TimelineOppositeContent style={ !matches? {maxWidth:"25%"} : {maxWidth:"100%"} }>
                         <Typography variant="body2" color="textSecondary">
-                            2017
+                            {t("experience.icls.date")}
                         </Typography>
                     </TimelineOppositeContent>
                     <TimelineSeparator>
@@ -172,7 +216,7 @@ export default function Experience (){
                                 t("experience.icls.list.l1"),
                                 t("experience.icls.list.l2")
                                 ]
-                        }}/>
+                        }} left={false}/>
                     </TimelineContent>
                 </TimelineItem>
 
@@ -188,7 +232,7 @@ export default function Experience (){
                 <TimelineItem>
                     <TimelineOppositeContent style={ !matches? {maxWidth:"25%"} : {maxWidth:"100%"} }>
                         <Typography variant="body2" color="textSecondary">
-                            2016
+                            {t("experience.lyon3.date")}
                         </Typography>
                     </TimelineOppositeContent>
                     <TimelineSeparator>
@@ -210,14 +254,14 @@ export default function Experience (){
                                 t("experience.lyon3.list.l5"),
                                 t("experience.lyon3.list.l6")
                             ]
-                        }}/>
+                        }} left={false}/>
                     </TimelineContent>
                 </TimelineItem>
 
                 <TimelineItem>
                     <TimelineOppositeContent style={ !matches? {maxWidth:"25%"} : {maxWidth:"100%"} }>
                         <Typography variant="body2" color="textSecondary">
-                            2015 Jul-Sep
+                            {t("experience.oxygene.date")}
                         </Typography>
                     </TimelineOppositeContent>
                     <TimelineSeparator>
@@ -237,7 +281,8 @@ export default function Experience (){
                                 t("experience.oxygene.list.l3"),
                                 t("experience.oxygene.list.l4"),
                             ]
-                        }}/>
+
+                        }} left={true}/>
                     </TimelineContent>
                 </TimelineItem>
             </Timeline>

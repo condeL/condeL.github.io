@@ -1,9 +1,20 @@
 import React, {useState} from "react";
-import {AppBar, Button, Drawer, IconButton, LinearProgress, Menu, MenuItem, Toolbar} from "@material-ui/core";
+import {
+    AppBar,
+    Button,
+    Drawer,
+    IconButton,
+    LinearProgress,
+    ListItemIcon,
+    Menu,
+    MenuItem,
+    Toolbar
+} from "@material-ui/core";
 import {Home, Translate} from "@material-ui/icons";
 import MenuIcon from "@material-ui/icons/Menu";
 import {makeStyles} from "@material-ui/core/styles";
 import {useTranslation} from "react-i18next";
+import {IconFlagUK, IconFlagFR} from 'material-ui-flags';
 
 const useStyles =  makeStyles(theme => ({
     paper: {
@@ -153,8 +164,10 @@ function TranslateButton(){
                 onClose={handleClose}
             >
 
-                <MenuItem onClick={() => i18n.changeLanguage("en").then(handleClose)}>{t("header.english")}</MenuItem>
-                <MenuItem onClick={() => i18n.changeLanguage("fr").then(handleClose)}>{t("header.french")}</MenuItem>
+                <MenuItem onClick={() => i18n.changeLanguage("en").then(handleClose)}>
+                    <ListItemIcon><IconFlagUK/></ListItemIcon>{t("header.english")}</MenuItem>
+                <MenuItem onClick={() => i18n.changeLanguage("fr").then(handleClose)}>
+                    <ListItemIcon><IconFlagFR/></ListItemIcon> {t("header.french")}</MenuItem>
             </Menu>
         </>
     )
