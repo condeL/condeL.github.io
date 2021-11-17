@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 
 
-import {Container} from "@material-ui/core";
+import {Container} from "@mui/material";
 import Header from "./Header";
 import About from "./About";
 import Skills from "./Skills";

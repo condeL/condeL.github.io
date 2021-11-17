@@ -1,5 +1,5 @@
-import {Box, Divider, Link, Paper, Typography, useTheme} from "@material-ui/core";
-import {Email, WhatsApp} from "@material-ui/icons";
+import {Box, Divider, Link, Paper, Typography, useTheme} from "@mui/material";
+import {Email, WhatsApp} from "@mui/icons-material";
 import React from "react";
 import {useTranslation} from "react-i18next";
 

@@ -1,6 +1,6 @@
-import {Box, Card, CardContent, Divider, Grid, Typography, useMediaQuery, useTheme} from "@material-ui/core";
-import {Rating} from "@material-ui/lab"
-import {Build, Create, DeveloperMode, ImportantDevices, Mood} from "@material-ui/icons";
+import {Box, Card, CardContent, Divider, Grid, Typography, useMediaQuery, useTheme} from "@mui/material";
+import { Rating } from '@mui/material';
+import {Build, Create, DeveloperMode, ImportantDevices, Mood} from "@mui/icons-material";
 import React from "react";
 import {useTranslation} from "react-i18next";
 import { useInView } from 'react-intersection-observer';

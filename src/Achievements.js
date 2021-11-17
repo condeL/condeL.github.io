@@ -1,5 +1,5 @@
-import {Box, Card, CardContent, Grid, Typography, useTheme} from "@material-ui/core";
-import {EmojiEvents} from "@material-ui/icons";
+import {Box, Card, CardContent, Grid, Typography, useTheme} from "@mui/material";
+import {EmojiEvents} from "@mui/icons-material";
 import React from "react";
 import {useTranslation} from "react-i18next";
 import {useInView} from "react-intersection-observer";

@@ -9,10 +9,10 @@ import {
     Menu,
     MenuItem,
     Toolbar
-} from "@material-ui/core";
-import {Home, Translate} from "@material-ui/icons";
-import MenuIcon from "@material-ui/icons/Menu";
-import {makeStyles} from "@material-ui/core/styles";
+} from "@mui/material";
+import {Home, Translate} from "@mui/icons-material";
+import MenuIcon from "@mui/icons-material/Menu";
+import makeStyles from '@mui/styles/makeStyles';
 import {useTranslation} from "react-i18next";
 import {IconFlagUK, IconFlagFR} from 'material-ui-flags';
 
@@ -104,9 +104,14 @@ function HeaderMenuMobile() {
         setOpen(false);
     };
 
-    return(
+    return (
         <Toolbar variant="dense">
-            <IconButton edge="start" color="inherit" aria-label="menu" onClick={handleDrawerOpen}>
+            <IconButton
+                edge="start"
+                color="inherit"
+                aria-label="menu"
+                onClick={handleDrawerOpen}
+                size="large">
                 <MenuIcon />
             </IconButton>
             <Drawer
@@ -120,7 +125,7 @@ function HeaderMenuMobile() {
             </Drawer>
             <TranslateButton/>
         </Toolbar>
-    )
+    );
 }
 
 function MenuButtons(){
@@ -151,24 +156,27 @@ function TranslateButton(){
 
     const { t, i18n } = useTranslation();
 
-    return(
-        <>
-            <IconButton  edge="end" color="inherit" aria-label="translate" onClick={handleClick}>
-                <Translate/>
-            </IconButton>
-            <Menu
-                id="translation-menu"
-                anchorEl={anchorEl}
-                keepMounted
-                open={Boolean(anchorEl)}
-                onClose={handleClose}
-            >
+    return <>
+        <IconButton
+            edge="end"
+            color="inherit"
+            aria-label="translate"
+            onClick={handleClick}
+            size="large">
+            <Translate/>
+        </IconButton>
+        <Menu
+            id="translation-menu"
+            anchorEl={anchorEl}
+            keepMounted
+            open={Boolean(anchorEl)}
+            onClose={handleClose}
+        >
 
-                <MenuItem onClick={() => i18n.changeLanguage("en").then(handleClose)}>
-                    <ListItemIcon><IconFlagUK/></ListItemIcon>{t("header.english")}</MenuItem>
-                <MenuItem onClick={() => i18n.changeLanguage("fr").then(handleClose)}>
-                    <ListItemIcon><IconFlagFR/></ListItemIcon> {t("header.french")}</MenuItem>
-            </Menu>
-        </>
-    )
+            <MenuItem onClick={() => i18n.changeLanguage("en").then(handleClose)}>
+                <ListItemIcon><IconFlagUK/></ListItemIcon>{t("header.english")}</MenuItem>
+            <MenuItem onClick={() => i18n.changeLanguage("fr").then(handleClose)}>
+                <ListItemIcon><IconFlagFR/></ListItemIcon> {t("header.french")}</MenuItem>
+        </Menu>
+    </>;
 }

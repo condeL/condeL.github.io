@@ -1,7 +1,7 @@
-import {Avatar, Box, Button, Link, Paper, Typography} from "@material-ui/core";
+import {Avatar, Box, Button, Link, Paper, Typography} from "@mui/material";
 import avatar from "./media/avatar.jpg";
-import {CloudDownload, GitHub, LinkedIn, Mail, Place, WhatsApp} from "@material-ui/icons";
-import {green, red} from "@material-ui/core/colors";
+import {CloudDownload, GitHub, LinkedIn, Mail, Place, WhatsApp} from "@mui/icons-material";
+import {green, red} from "@mui/material/colors";
 import cv_en from "./files/Lanciné Condé CV_en.pdf";
 import cv_fr from "./files/Lanciné Condé CV_fr.pdf";
 

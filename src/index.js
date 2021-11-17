@@ -2,14 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import { createTheme } from '@material-ui/core/styles';
-import { ThemeProvider } from '@material-ui/core/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+import { createTheme, adaptV4Theme } from '@mui/material/styles';
+import { ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
 import './i18n';
 import reportWebVitals from './reportWebVitals';
 
 
-const theme = createTheme({
+const theme = createTheme(adaptV4Theme({
     palette: {
         primary: {
             main :"#2962FF"
@@ -41,14 +41,16 @@ const theme = createTheme({
             fontSize: "1.00rem"
         },
     },
-});
+}));
 
 ReactDOM.render(
     <React.StrictMode>
-        <ThemeProvider theme={theme}>
-            <CssBaseline />
-            <App />
-        </ThemeProvider>
+        <StyledEngineProvider injectFirst>
+            <ThemeProvider theme={theme}>
+                <CssBaseline />
+                <App />
+            </ThemeProvider>
+        </StyledEngineProvider>
     </React.StrictMode>,
     document.getElementById('root')
 );

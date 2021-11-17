@@ -1,6 +1,6 @@
 import {useForm} from "@formspree/react";
-import {Box, Button, Paper, TextField, Typography} from "@material-ui/core";
-import {Mail, Send} from "@material-ui/icons";
+import {Box, Button, Paper, TextField, Typography} from "@mui/material";
+import {Mail, Send} from "@mui/icons-material";
 import React from "react";
 import {useTranslation} from "react-i18next";
 

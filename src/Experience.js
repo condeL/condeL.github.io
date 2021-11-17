@@ -10,8 +10,8 @@ import {
     List,
     ListItemText,
     Typography, useMediaQuery, useTheme
-} from "@material-ui/core";
-import {BusinessCenter, School} from "@material-ui/icons";
+} from "@mui/material";
+import {BusinessCenter, School} from "@mui/icons-material";
 import {
     Timeline,
     TimelineConnector, TimelineContent,
@@ -19,7 +19,7 @@ import {
     TimelineItem,
     TimelineOppositeContent,
     TimelineSeparator
-} from "@material-ui/lab";
+} from "@mui/lab";
 import {useTranslation} from "react-i18next";
 import {useInView} from "react-intersection-observer";
 import {motion} from "framer-motion";

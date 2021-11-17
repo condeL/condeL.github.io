@@ -10,8 +10,8 @@ import {
     Divider,
     Grid,
     Typography
-} from "@material-ui/core";
-import {Code, GitHub} from "@material-ui/icons";
+} from "@mui/material";
+import {Code, GitHub} from "@mui/icons-material";
 import wemath from "./media/wemath.png";
 import fredbot from "./media/fredbot.png";
 import {useTranslation} from "react-i18next";
