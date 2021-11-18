@@ -1,27 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.163245fe.chunk.css",
-    "main.js": "/static/js/main.548a5fdb.chunk.js",
-    "main.js.map": "/static/js/main.548a5fdb.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.5448370e.js",
-    "runtime-main.js.map": "/static/js/runtime-main.5448370e.js.map",
-    "static/js/2.c109f482.chunk.js": "/static/js/2.c109f482.chunk.js",
-    "static/js/2.c109f482.chunk.js.map": "/static/js/2.c109f482.chunk.js.map",
-    "static/js/3.df93af5a.chunk.js": "/static/js/3.df93af5a.chunk.js",
-    "static/js/3.df93af5a.chunk.js.map": "/static/js/3.df93af5a.chunk.js.map",
+    "main.css": "/static/css/main.69258a3c.css",
+    "main.js": "/static/js/main.529a2e19.js",
+    "static/js/787.fec03637.chunk.js": "/static/js/787.fec03637.chunk.js",
+    "static/media/avatar.jpg": "/static/media/avatar.c20092d92a9bbe1d85a2.jpg",
+    "static/media/fredbot.png": "/static/media/fredbot.2ce989039568b13e7283.png",
+    "static/media/Lanciné Condé CV_fr.pdf": "/static/media/Lanciné Condé CV_fr.5909b2f02f1e426a1f58.pdf",
+    "static/media/Lanciné Condé CV_en.pdf": "/static/media/Lanciné Condé CV_en.5d6bc2830d5a0dc2f976.pdf",
+    "static/media/wemath.png": "/static/media/wemath.fefe600a9ef3a0688e2e.png",
     "index.html": "/index.html",
-    "static/css/main.163245fe.chunk.css.map": "/static/css/main.163245fe.chunk.css.map",
-    "static/js/2.c109f482.chunk.js.LICENSE.txt": "/static/js/2.c109f482.chunk.js.LICENSE.txt",
-    "static/media/Lanciné Condé CV_en.d88e3d21.pdf": "/static/media/Lanciné Condé CV_en.d88e3d21.pdf",
-    "static/media/Lanciné Condé CV_fr.8e5f5be2.pdf": "/static/media/Lanciné Condé CV_fr.8e5f5be2.pdf",
-    "static/media/avatar.c20092d9.jpg": "/static/media/avatar.c20092d9.jpg",
-    "static/media/fredbot.2ce98903.png": "/static/media/fredbot.2ce98903.png",
-    "static/media/wemath.fefe600a.png": "/static/media/wemath.fefe600a.png"
+    "main.69258a3c.css.map": "/static/css/main.69258a3c.css.map",
+    "main.529a2e19.js.map": "/static/js/main.529a2e19.js.map",
+    "787.fec03637.chunk.js.map": "/static/js/787.fec03637.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.5448370e.js",
-    "static/js/2.c109f482.chunk.js",
-    "static/css/main.163245fe.chunk.css",
-    "static/js/main.548a5fdb.chunk.js"
+    "static/css/main.69258a3c.css",
+    "static/js/main.529a2e19.js"
   ]
 }
