@@ -34,14 +34,14 @@ export default function About (){
                     </Box>
                 </Box>
                 <Typography variant="body1" paragraph="true">
-                    <p>{t("about.profile")}<br/><br/>
+                    <p>{t("about.profile")}<br/>
                         {t("about.nationality")}<br />
                         {t("about.gender")}<br />
                         {t("about.interests")}</p>
                 </Typography>
                 <Box m={1}>
-                    <Link href="https://github.com/condeL" rel="noopener noreferrer"><GitHub fontSize="large"/></Link>
-                    <Link href="https://www.linkedin.com/in/lanciné-condé-493511214/" rel="noopener noreferrer"><LinkedIn fontSize="large" /></Link>
+                    <Link href="https://github.com/condeL" rel="noopener noreferrer" target="_blank"><GitHub fontSize="large"/></Link>
+                    <Link href="https://www.linkedin.com/in/lanciné-condé-493511214/" rel="noopener noreferrer" target="_blank"><LinkedIn fontSize="large" /></Link>
                 </Box>
                 <box>
                     <Button variant="contained"

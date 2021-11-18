@@ -62,10 +62,11 @@ export default function Projects(){
                             </Typography>
                         </CardContent>
                         <CardActions style={{justifyContent: 'center'}}>
-                            <Button variant="contained" color="primary" onClick={handleExpandClick}>
+                            <Button variant="contained" color="primary" onClick={handleExpandClick} style={{ marginRight: 4}}>
                                 {t("projects.learn_more")}
                             </Button>
-                            <Button variant="outlined" color="primary" rel="noopener noreferrer" href="https://github.com/condeL/WeMath" startIcon={<GitHub/>}>
+
+                            <Button variant="outlined" color="primary" rel="noopener noreferrer" href="https://github.com/condeL/WeMath" target="_blank" startIcon={<GitHub/>} style={{ marginLeft: 4}}>
                                 {t("projects.see_code")}
                             </Button>
                         </CardActions>
@@ -104,7 +105,6 @@ export default function Projects(){
                             <Button variant="contained" color="primary" onClick={handleExpandClick}>
                                 {t("projects.learn_more")}
                             </Button>
-
                             <Button variant="contained" color="secondary" startIcon={<GitHub/>} disabled>
                                 {t("projects.coming_soon")}
                             </Button>

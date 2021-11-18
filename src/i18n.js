@@ -27,7 +27,7 @@ i18n
                         projects:"Projects",
                         achievements:"Achievements",
                         contact:"Contact",
-                        french:"Francais",
+                        french:"Français",
                         english:"English"
                     },
                     about:{
@@ -229,7 +229,7 @@ i18n
                         projects:"Projets",
                         achievements:"Réalisations",
                         contact:"Contact",
-                        french:"Francais",
+                        french:"Français",
                         english:"English"
                     },
                     about:{

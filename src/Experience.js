@@ -97,7 +97,7 @@ export default function Experience (){
                 : <Typography variant="h2" style={{ fontWeight: 400, textAlign:"center"}}>{<School/>}{t("experience.title_journey")}</Typography>
             }
 
-            <Timeline align={matches? "alternate" : "left"}>
+            <Timeline position={matches? "alternate" : "right"}>
 
                 <TimelineItem>
                     <TimelineOppositeContent style={ !matches? {maxWidth:"25%"} : {maxWidth:"100%"} }>
@@ -109,7 +109,7 @@ export default function Experience (){
                         <TimelineDot color="primary"/>
                         <TimelineConnector />
                     </TimelineSeparator>
-                    <TimelineContent>
+                    <TimelineContent style={{textAlign:"center"}}>
                         <CreateCard content={{
                             h3:t("experience.london.h3"),
                             sub1:t("experience.london.sub1"),
@@ -129,6 +129,7 @@ export default function Experience (){
                 { matches===true &&
                 <TimelineItem style={{ marginTop: -15}}>
                     <TimelineSeparator>
+
                         <TimelineConnector />
                     </TimelineSeparator>
                     <TimelineContent>
@@ -145,7 +146,7 @@ export default function Experience (){
                         <TimelineDot color="primary"/>
                         <TimelineConnector />
                     </TimelineSeparator>
-                    <TimelineContent>
+                    <TimelineContent style={{textAlign:"center"}}>
                         <CreateCard content={{
                             h3:t("experience.lancaster.h3"),
                             sub1:t("experience.lancaster.sub1"),
@@ -205,7 +206,7 @@ export default function Experience (){
                         <TimelineDot color="primary"/>
                         <TimelineConnector />
                     </TimelineSeparator>
-                    <TimelineContent>
+                    <TimelineContent style={{textAlign:"center"}}>
                         <CreateCard content={{
                             h3:t("experience.icls.h3"),
                             sub1:t("experience.icls.sub1"),
@@ -239,7 +240,7 @@ export default function Experience (){
                         <TimelineDot color="primary" variant="outlined"/>
                         <TimelineConnector />
                     </TimelineSeparator>
-                    <TimelineContent>
+                    <TimelineContent style={{textAlign:"center"}}>
                         <CreateCard content={{
                             h3:t("experience.lyon3.h3"),
                             sub1:t("experience.lyon3.sub1"),
