@@ -14,7 +14,7 @@ import {Home, Translate} from "@mui/icons-material";
 import MenuIcon from "@mui/icons-material/Menu";
 import makeStyles from '@mui/styles/makeStyles';
 import {useTranslation} from "react-i18next";
-import {IconFlagUK, IconFlagFR} from 'material-ui-flags';
+import ReactCountryFlag from "react-country-flag"
 
 const useStyles =  makeStyles(theme => ({
     paper: {
@@ -174,9 +174,9 @@ function TranslateButton(){
         >
 
             <MenuItem onClick={() => i18n.changeLanguage("en").then(handleClose)}>
-                <ListItemIcon><IconFlagUK/></ListItemIcon>{t("header.english")}</MenuItem>
+                <ListItemIcon><ReactCountryFlag countryCode={"GB"} svg/></ListItemIcon>{t("header.english")}</MenuItem>
             <MenuItem onClick={() => i18n.changeLanguage("fr").then(handleClose)}>
-                <ListItemIcon><IconFlagFR/></ListItemIcon> {t("header.french")}</MenuItem>
+                <ListItemIcon><ReactCountryFlag countryCode={"FR"} svg/></ListItemIcon> {t("header.french")}</MenuItem>
         </Menu>
     </>;
 }
