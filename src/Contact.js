@@ -6,7 +6,8 @@ import {useTranslation} from "react-i18next";
 
 export default function Contact(){
     const { t } = useTranslation();
-    const [state, handleSubmit] = useForm("xknkyodn");
+    //const [state, handleSubmit] = useForm("xknkyodn");
+    const [state, handleSubmit] = useForm(process.env.REACT_APP_FORM_KEY);
     if (state.succeeded) {
         return (
             <Box id="Contact"  m={3} >
