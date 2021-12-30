@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/static/css/main.69258a3c.css",
-    "main.js": "/static/js/main.529a2e19.js",
+    "main.js": "/static/js/main.9597656f.js",
     "static/js/787.fec03637.chunk.js": "/static/js/787.fec03637.chunk.js",
     "static/media/avatar.jpg": "/static/media/avatar.c20092d92a9bbe1d85a2.jpg",
+    "static/media/Lanciné Condé CV_fr.pdf": "/static/media/Lanciné Condé CV_fr.2301c8ae31e126d18362.pdf",
+    "static/media/Lanciné Condé CV_en.pdf": "/static/media/Lanciné Condé CV_en.b6ec4e8abd110a16d24b.pdf",
     "static/media/fredbot.png": "/static/media/fredbot.2ce989039568b13e7283.png",
-    "static/media/Lanciné Condé CV_fr.pdf": "/static/media/Lanciné Condé CV_fr.5909b2f02f1e426a1f58.pdf",
-    "static/media/Lanciné Condé CV_en.pdf": "/static/media/Lanciné Condé CV_en.5d6bc2830d5a0dc2f976.pdf",
     "static/media/wemath.png": "/static/media/wemath.fefe600a9ef3a0688e2e.png",
     "index.html": "/index.html",
     "main.69258a3c.css.map": "/static/css/main.69258a3c.css.map",
-    "main.529a2e19.js.map": "/static/js/main.529a2e19.js.map",
+    "main.9597656f.js.map": "/static/js/main.9597656f.js.map",
     "787.fec03637.chunk.js.map": "/static/js/787.fec03637.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.69258a3c.css",
-    "static/js/main.529a2e19.js"
+    "static/js/main.9597656f.js"
   ]
 }
