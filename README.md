@@ -1,1 +1,1 @@
-# [lancineconde.me](https://lancineconde.me)
+# [lancineconde.tech](https://lancineconde.tech)
